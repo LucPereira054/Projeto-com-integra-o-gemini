@@ -35,7 +35,7 @@ def marcar_concluida(index):
 
 def otimizar_com_ai(lista):
     lista_formatada="\n".join(f"-{t['descricao']} ({t['status']})" for t in lista)
-    prompt=f"analise minhas taarefas e sugira uma ordem de execução mais eficiente:\n{lista_formatada}"
+    prompt=f"Você é um assistente de produtividade pessoal.Analise as tarefas e faça duas coisas:1-Sugira uma ordem de execução mais eficiente, 2-Dê uma dica curta de como priorizar o que é mais importaante. Essas são suas tarefas:\n{lista_formatada}"
     response=client.chat.completions.create(
     model="llama-3.3-70b-versatile",
     messages=[{"role":"user","content":prompt}]
