@@ -23,6 +23,14 @@ else:
         st.write(f"{index}. {t['descricao']} - {status}")
 
 st.divider()
+if st.button("Apagar todas as tarefas"):
+    st.session_state['tarefas']=[]
+    st.warning("Lista apagada")
+    st.rerun()
+
+
+
+st.divider()
 
 st.subheader("Assitente de Pordutividade!!!")
 st.write("Deixe a IA sugerir a melhor ordem para você excutar suas tarefas de hoje e até mesmo sugerir o que você pode fazer!")
